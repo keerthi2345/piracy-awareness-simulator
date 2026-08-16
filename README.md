@@ -1,111 +1,162 @@
 # What Actually Happens If You Get Caught — Digital Risk Awareness Simulator
 
-A MERN-stack interactive simulator that walks a user through three common risky
-actions — a scam pop-up, a piracy/streaming site, and a fake "free Netflix" APK —
-and shows a realistic (simulated, non-executing) chain of consequences, followed
-by plain-language legal context and a "what to actually do" remediation flow.
+A MERN-stack interactive simulator that walks users through common digital
+risk scenarios — a scam pop-up, a piracy/streaming site, and a fake "free
+Netflix" APK — showing a realistic (fully simulated, non-executing) chain of
+consequences, followed by research-backed legal context and a guided
+"what to actually do" recovery flow. Also includes a reference Threat
+Library for attacks that happen outside the browser (calls, SMS, QR
+tampering), a live URL Safety Checker using Google Safe Browsing, and a
+personal Digital Risk Awareness Score with a downloadable PDF report.
 
 **Nothing in this app runs real malicious code, requests real browser
 permissions, opens real tabs/windows, or references a real APK file.**
-Every "attack" is a scripted UI animation. This is explicitly stated on
-screen at the start of every scenario.
+Every "attack" is a scripted UI animation, stated on screen at the start
+of every scenario.
 
-## Stack
+## Live demo
 
-- **Frontend**: React 18 + Vite, React Router, Framer Motion
-- **Backend**: Node.js + Express
-- **Database**: MongoDB (Atlas or local) via Mongoose
-- **External API**: Google Safe Browsing v4 (called server-side only — the
-  key never reaches the browser)
-- **PDF**: PDFKit (server-side report generation)
+- **App**: https://piracy-awareness-simulator.vercel.app/
+- **Backend API**: https://piracy-awareness-simulator.onrender.com
+
+> Note: the backend is hosted on Render's free tier, which sleeps after
+> 15 minutes of inactivity. The first request after a period of idleness
+> may take 30–50 seconds to respond while it wakes up.
+
+## Features
+
+- **Three interactive scenarios** — pop-up scam, piracy site, fake APK —
+  each ending in a terminal-style "reveal" animation, a researched legal
+  consequence screen, and a visual recovery-montage remediation sequence
+- **Threat Library** — 8 reference entries covering attacks that don't
+  happen inside a browser (UPI fraud, screen-sharing scams, digital arrest
+  scams, vishing, QR code swaps, and more), each with how-it-works, red
+  flags, and what to do
+- **Live URL Safety Checker** — real Google Safe Browsing v4 integration,
+  proxied server-side so the API key never reaches the client
+- **Digital Risk Awareness Score** — computed server-side from logged
+  choices during each session, with a downloadable PDF report
+- **Aggregate stats** — anonymized cross-session data on what choices
+  other users actually made
+
+## Tech stack
+
+- **Frontend**: React 18 + Vite, React Router, Framer Motion — deployed on Vercel
+- **Backend**: Node.js + Express — deployed on Render
+- **Database**: MongoDB Atlas via Mongoose
+- **External API**: Google Safe Browsing v4 (server-side only)
+- **PDF generation**: PDFKit
 
 ## Project layout
 
 ```
 backend/
-  server.js              entry point
+  server.js               entry point
   config/db.js            Mongo connection
   models/                 Session, Event, LegalFact schemas
   routes/, controllers/   REST API
   utils/riskScore.js      server-side scoring logic
   utils/pdfGenerator.js   PDF report builder
-  data/legalFacts.json    seed data for the LegalFacts collection
-  seed.js                 run once to populate legal facts
+  data/ seed data         (legal facts, threat library)
+  seed.js                 populates both collections
 
 frontend/
-  src/scenarios/          the three scenario flows
-  src/components/         reusable pieces (reveal animation, fake dialogs,
-                           consequence screen, remediation reveal)
-  src/pages/               Home, UrlChecker, SummaryReport
+  src/scenarios/           the three scenario flows
+  src/components/          reusable pieces (reveal animation, fake dialogs,
+                           consequence screen, remediation showcase)
+  src/pages/               Home, ThreatLibrary, UrlChecker, SummaryReport
   src/context/             session state shared across scenarios
-  src/styles/               three visual "registers" — shady / terminal / authority
+  src/styles/              cyber-console visual theme (shared) plus a
+                           distinct "shady site" register for scenarios
 ```
 
-## Design concept (for your report)
+## Design concept
 
-The app deliberately shifts between three visual registers as the user
-moves through a scenario, and this *is* the pedagogical device:
+The app shifts between three visual registers, and this shift is itself
+the pedagogical device:
 
-1. **Shady register** — the mock piracy site / fake APK screen. Intentionally
-   cluttered, clashing colors, fake urgency — this is what real sketchy sites
-   look like.
-2. **Terminal register** — the reveal sequence. Black background, monospace,
-   phosphor-green text typed line by line — this is the "behind the scenes"
-   moment.
-3. **Authority register** — the consequence screen and remediation flow. Calm,
-   clean, single accent color — deliberately the opposite of the first two,
-   signaling "this is the trustworthy, considered information."
+1. **Cyber-console register** (home, nav, library, reports) — dark,
+   grid-lined, neon — the app's default "you are in a security console"
+   identity
+2. **Shady register** (inside a scenario, before the reveal) —
+   deliberately cluttered, clashing colors, fake urgency — what real
+   sketchy sites actually look like
+3. **Recovery register** (the remediation showcase) — calm teal gradient,
+   icon-led story sequence — the "you're safe now, here's what you do"
+   moment
 
-The transition between registers is the app's signature interaction.
+## Running it locally
 
-## Setup
+### 1. Clone the repo
 
-### 1. Backend
+```bash
+git clone https://github.com/keerthi2345/piracy-awareness-simulator.git
+cd piracy-awareness-simulator
+```
 
+### 2. Backend
 ```bash
 cd backend
 npm install
 cp .env.example .env
 # edit .env: set MONGO_URI and SAFE_BROWSING_API_KEY
-npm run seed      # populates the LegalFacts collection
-npm run dev       # starts on http://localhost:5000
+npm run seed
+npm run dev       # http://localhost:5000
 ```
 
-Get a free Safe Browsing API key: console.cloud.google.com → enable
-"Safe Browsing API" → create an API key. The URL-checker feature will
-show a clear "not configured" message if you skip this — it's optional
-for the rest of the app to work.
-
-### 2. Frontend
+### 3. Frontend
 
 ```bash
 cd frontend
 npm install
-npm run dev        # starts on http://localhost:5173
+npm run dev        # http://localhost:5173
 ```
 
-The frontend expects the backend at `http://localhost:5000` — change
-`VITE_API_URL` in a `.env` file inside `frontend/` if different.
+The frontend expects the backend at `http://localhost:5000` by default —
+override with `VITE_API_URL` in `frontend/.env` if different.
 
 ## API summary
 
 | Method | Route | Purpose |
 |---|---|---|
-| POST | `/api/session` | start a new session, returns `sessionId` |
-| POST | `/api/session/:id/event` | log a choice the user made |
-| GET  | `/api/session/:id/score` | compute risk score from logged events |
+| POST | `/api/session` | start a new session |
+| POST | `/api/session/:id/event` | log a choice |
+| GET  | `/api/session/:id/score` | compute risk score |
 | GET  | `/api/session/:id/report` | stream a PDF report |
 | POST | `/api/check-url` | proxy a URL through Safe Browsing |
-| GET  | `/api/legal-facts?category=` | fetch legal context by category |
+| GET  | `/api/legal-facts?category=` | legal/prevention content by scenario |
+| GET  | `/api/threats?severity=` | threat library entries |
+| GET  | `/api/stats` | aggregate anonymized choice data |
 
-## Notes on the loophole fixes discussed in planning
+## Deployment
 
-- Fake browser permission prompts (notifications, APK permissions) are
-  styled `<div>`s — the real `Notification` API and real app installs are
-  never invoked.
-- The "multiple tabs opening" effect is a CSS/Framer Motion animation of
-  icon elements — `window.open()` is never called.
-- The Safe Browsing API key lives only in `backend/.env` and is read via
-  `process.env` inside the Express route — it is never sent to the client.
-- The risk score is computed **server-side** from logged events, not in
-  the browser, so it can't be trivially edited via devtools.
+- **Backend**: deployed on Render as a Node web service, root directory
+  `backend`, environment variables (`MONGO_URI`, `SAFE_BROWSING_API_KEY`,
+  `CORS_ORIGIN`) configured in Render's dashboard
+- **Frontend**: deployed on Vercel, root directory `frontend`,
+  `VITE_API_URL` pointing to the Render backend URL
+- **Database**: MongoDB Atlas, free M0 cluster
+
+## Security notes
+
+- The Safe Browsing API key lives only in the backend's environment
+  variables, read server-side — never sent to the client
+- Risk scores are computed server-side from logged events, not trusted
+  from the browser
+- No PII is collected — sessions use a random anonymous token, not any
+  real identity
+- No real browser permission APIs, remote-access tools, or files are
+  invoked anywhere in the codebase — every "attack" is a scripted
+  animation
+- `.env` files are excluded from version control via `.gitignore`
+
+## Author
+
+## Author
+
+**Bora Keerthi Sri Reddy**
+4th Year B.Tech, Computer Science Engineering in
+GVP College of Engineering for Women (GVPCEW)
+
+Built as a college project exploring "informed consent, not
+fear-mongering" as an approach to digital risk education.
