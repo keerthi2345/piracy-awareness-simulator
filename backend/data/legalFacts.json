@@ -1,0 +1,98 @@
+[
+  {
+    "category": "popup",
+    "type": "law",
+    "title": "IT Act Section 43 / 66 — Unauthorized Access",
+    "summary": "Scripts that install tracking cookies or access device data without consent fall under unauthorized access/data theft provisions. This targets the site operator, not a user who was tricked into clicking.",
+    "source": "https://csic.org.in/cyber-crime-act/",
+    "order": 1
+  },
+  {
+    "category": "popup",
+    "type": "prevention",
+    "title": "Don't click inside the ad at all",
+    "summary": "Close via the browser tab or window control, not the ad's own 'X' — fake close buttons can still trigger scripts. Keep a pop-up blocker enabled.",
+    "source": "https://www.mcafee.com/blogs/internet-security/what-are-the-risks-of-clicking-on-malicious-links/",
+    "order": 1
+  },
+  {
+    "category": "popup",
+    "type": "remediation",
+    "title": "If you already clicked",
+    "summary": "Close the tab without clicking anything else. Turn off Wi-Fi or switch to airplane mode to stop any script from reaching a remote server. Run a full security scan afterward. If you entered any personal info, contact your bank.",
+    "source": "https://blog.talosintelligence.com/what-to-do-when-you-click-on-a-suspicious-link/",
+    "order": 1
+  },
+  {
+    "category": "piracy_site",
+    "type": "law",
+    "title": "Streaming vs. downloading — a real legal distinction",
+    "summary": "The Bombay High Court has clarified that simply viewing/streaming pirated content for personal use, without downloading or sharing, is not treated as a criminal offense for the viewer. The liability falls mainly on the sites hosting and distributing the content.",
+    "source": "https://english.bigtvlive.com/tollywood/watching-pirated-movies-online-illegal-in-india-or-safe-check-legal-consequences-ibomma-piracy-case/",
+    "order": 1
+  },
+  {
+    "category": "piracy_site",
+    "type": "law",
+    "title": "Copyright Act, 1957 — Sections 63, 65A, 65B",
+    "summary": "Downloading, copying, or distributing pirated content is punishable — up to 3 years imprisonment (7 for repeat/large-scale offenses) and fines from roughly ₹50,000 upward, depending on severity.",
+    "source": "https://bytescare.com/blog/piracy-laws-in-india",
+    "order": 2
+  },
+  {
+    "category": "piracy_site",
+    "type": "prevention",
+    "title": "Never grant notification permissions to unfamiliar sites",
+    "summary": "Once granted, a site can keep pushing ads and redirect links even after you've closed the browser. Treat any 'Allow notifications to continue' prompt on a streaming site as a red flag, not a requirement.",
+    "source": "https://www.lexology.com/library/detail.aspx?g=d599eba2-e69a-4121-95b4-ff84e49730c6",
+    "order": 1
+  },
+  {
+    "category": "piracy_site",
+    "type": "remediation",
+    "title": "If you granted notification access or hit a redirect chain",
+    "summary": "Revoke the permission immediately: browser settings → site settings → notifications → remove. Don't follow any further redirects. If a page asked for payment or personal info, treat it like a phishing incident.",
+    "source": "https://www.solve.uk.com/post/what-to-do-if-you-think-you-ve-clicked-on-a-malicious-link",
+    "order": 1
+  },
+  {
+    "category": "fake_apk",
+    "type": "law",
+    "title": "IT Act Section 66C — Identity Theft",
+    "summary": "Fraudulent or dishonest use of passwords, electronic signatures, or other unique identifiers — including stolen OTPs — is a specific, punishable offense under this section.",
+    "source": "https://csic.org.in/cyber-crime-act/",
+    "order": 1
+  },
+  {
+    "category": "fake_apk",
+    "type": "law",
+    "title": "IT Act Section 66D — Cheating by Personation",
+    "summary": "Covers cheating by impersonation using a computer resource — directly applicable to apps or actors that use stolen OTPs/credentials to access accounts.",
+    "source": "https://www.understandupsc.com/information-technology-act-2000/",
+    "order": 2
+  },
+  {
+    "category": "fake_apk",
+    "type": "prevention",
+    "title": "Only install from the Play Store, and read permissions",
+    "summary": "A streaming app never legitimately needs SMS access or Accessibility Service. Accessibility Service specifically can let an app read your screen and simulate taps — this is the mechanism behind OTP theft. Keep 'install from unknown sources' disabled.",
+    "source": "https://www.deccanherald.com/amp/story/india%2Fkarnataka%2Fbengaluru%2Fbeware-of-phishing-scams-fake-news-and-malicious-links-bengaluru-police-commissioner-3536954",
+    "order": 1
+  },
+  {
+    "category": "fake_apk",
+    "type": "remediation",
+    "title": "If you already installed one",
+    "summary": "Turn off Wi-Fi/mobile data immediately. Contact your bank to freeze the card and watch for unauthorized charges. Uninstall the app after revoking its Accessibility Service access in Settings first.",
+    "source": "https://www.mcafee.com/blogs/internet-security/what-are-the-risks-of-clicking-on-malicious-links/",
+    "order": 1
+  },
+  {
+    "category": "general",
+    "type": "remediation",
+    "title": "Report it — official channel",
+    "summary": "Call the national cybercrime helpline at 1930, or file a report at cybercrime.gov.in. This is the correct first step for any of the three scenarios if real harm may have occurred — don't panic, just report.",
+    "source": "https://www.deccanherald.com/amp/story/india%2Fkarnataka%2Fbengaluru%2Fbeware-of-phishing-scams-fake-news-and-malicious-links-bengaluru-police-commissioner-3536954",
+    "order": 1
+  }
+]

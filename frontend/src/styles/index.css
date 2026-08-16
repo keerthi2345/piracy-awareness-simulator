@@ -1,0 +1,84 @@
+:root {
+  /* Authority register — calm, trustworthy, used for consequence/report screens */
+  --authority-bg: #f7f6f2;
+  --authority-ink: #14171a;
+  --authority-muted: #5c6166;
+  --authority-accent: #1b6e6e;
+  --authority-accent-soft: #dceceb;
+  --authority-line: #d8d5cd;
+
+  /* Terminal register — the reveal sequence */
+  --terminal-bg: #0a0d0a;
+  --terminal-green: #3ef27c;
+  --terminal-green-dim: #1f7a45;
+  --terminal-amber: #ffb84d;
+
+  /* Shady register — the mock piracy site / fake apk screens */
+  --shady-bg: #170b26;
+  --shady-bg2: #23103a;
+  --shady-pink: #ff2e63;
+  --shady-lime: #c6ff00;
+  --shady-yellow: #ffd400;
+  --shady-text: #f4eefc;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: #050b10;
+  color: #d6f5f0;
+}
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ---------- Shared layout shell ---------- */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.disclaimer-banner {
+  background: var(--authority-accent-soft);
+  color: var(--authority-accent);
+  font-size: 0.85rem;
+  padding: 10px 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--authority-line);
+}

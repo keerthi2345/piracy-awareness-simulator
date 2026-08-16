@@ -1,0 +1,83 @@
+.showcase-screen {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #0e2a2a, #123939 60%, #0a1f1f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.showcase-card {
+  width: min(420px, 100%);
+  text-align: center;
+}
+
+.showcase-progress-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 32px;
+}
+
+.showcase-progress-track {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.showcase-progress-fill {
+  height: 100%;
+  background: #3ef2b0;
+}
+
+.showcase-icon-wrap {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background: rgba(62, 242, 176, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(62, 242, 176, 0.4);
+}
+
+.showcase-caption {
+  color: #eafff6;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  line-height: 1.5;
+  min-height: 80px;
+}
+
+.showcase-subcaption {
+  color: #9fd9c8;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  font-family: var(--font-body);
+}
+
+.showcase-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.showcase-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #eafff6;
+  padding: 9px 18px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+}
+
+.showcase-btn.primary {
+  background: #3ef2b0;
+  color: #0a1f1f;
+  border-color: #3ef2b0;
+  font-weight: 600;
+}

@@ -1,0 +1,154 @@
+[
+  {
+    "key": "upi_collect_fraud",
+    "title": "UPI Collect Request Fraud",
+    "severity": "high",
+    "vector": "UPI app / WhatsApp / Marketplace chat",
+    "howItWorks": "The scammer claims to be sending you money — often while pretending to buy something you're selling online, or refunding a payment — but actually sends a 'collect' request instead. If you enter your UPI PIN to 'receive' it, money is debited from your account instead of credited.",
+    "redFlags": [
+      "Any request that asks you to enter your UPI PIN to 'receive' money",
+      "Urgency around an online marketplace sale or a promised refund",
+      "A payment request appearing right after you list something for sale"
+    ],
+    "whatToDo": [
+      "Remember: a UPI PIN is only ever needed to send money, never to receive it",
+      "If a 'collect' request appears, decline it and verify with the other party through a separate channel",
+      "If you already entered your PIN, contact your bank immediately and report at cybercrime.gov.in or call 1930"
+    ],
+    "source": "https://the420.in/digital-arrest-upi-cyber-fraud-awareness/",
+    "order": 1
+  },
+  {
+    "key": "screen_sharing_remote_access",
+    "title": "Screen-Sharing Remote Access Scam",
+    "severity": "high",
+    "vector": "Phone call posing as bank/customer support",
+    "howItWorks": "A caller posing as bank or company support asks you to install a remote-access app (like AnyDesk or similar) to 'fix' a pending transaction or account issue. Once installed, the caller can see your entire screen, including OTPs and banking passwords, and can act as if they were physically holding your phone.",
+    "redFlags": [
+      "Any unsolicited call asking you to install a screen-sharing or remote-access app",
+      "Pressure to act immediately to 'resolve' a transaction",
+      "Being asked to read out an OTP or PIN while a screen-share session is active"
+    ],
+    "whatToDo": [
+      "Never install a remote-access app at the request of an unsolicited caller",
+      "Hang up and call your bank back using the number on your card or official website, not a number the caller gives you",
+      "If you already installed one, disconnect from the internet immediately, uninstall the app, and contact your bank to freeze the account"
+    ],
+    "source": "https://cyberupdates365.com/digital-arrest-scam-safety-guide-2026/",
+    "order": 2
+  },
+  {
+    "key": "digital_arrest_scam",
+    "title": "\"Digital Arrest\" Scam",
+    "severity": "high",
+    "vector": "Phone or video call posing as law enforcement",
+    "howItWorks": "Fraudsters pose as police, CBI, or customs officials over a phone or video call, claiming you are under investigation or 'digital arrest' for money laundering or a similar crime, and demand payment to make the case go away.",
+    "redFlags": [
+      "Any claim that you can be arrested or investigated over a phone or video call",
+      "Demands for immediate payment to avoid arrest",
+      "Instructions to stay on the call and not tell anyone ('secrecy' pressure)"
+    ],
+    "whatToDo": [
+      "Know this fact cold: no Indian law enforcement agency conducts an arrest or investigation via WhatsApp, Skype, or Zoom",
+      "Hang up — do not engage, pay, or share any personal/financial details",
+      "Report the call at cybercrime.gov.in or call the 1930 helpline"
+    ],
+    "source": "https://cyberupdates365.com/digital-arrest-scam-safety-guide-2026/",
+    "order": 3
+  },
+  {
+    "key": "vishing_fake_kyc",
+    "title": "Vishing & Fake KYC Update Calls",
+    "severity": "medium",
+    "vector": "Phone call posing as bank/telecom/tax official",
+    "howItWorks": "Callers pretend to be from a bank, telecom provider, or income-tax department, claiming your KYC has expired or your account will be blocked, and use urgency or fear to extract your OTP, card details, or Aadhaar information.",
+    "redFlags": [
+      "Any call claiming your account/SIM will be blocked unless you act immediately",
+      "A request for your OTP, PIN, or full card number over a call",
+      "A caller who already seems to know some of your details, used to build false trust"
+    ],
+    "whatToDo": [
+      "Banks and telecom providers never ask for your OTP or PIN over a call",
+      "Hang up and contact the organization directly using their official number",
+      "Report suspicious numbers at cybercrime.gov.in"
+    ],
+    "source": "https://www.cyberdecode.in/cybersecurity-tips-india/",
+    "order": 4
+  },
+  {
+    "key": "qr_code_swap",
+    "title": "QR Code Swap Fraud",
+    "severity": "medium",
+    "vector": "Physical QR code tampering at shops",
+    "howItWorks": "A fraudulent QR sticker is placed over a legitimate merchant's payment QR code at a shop or stall. Customers scan what looks like the store's usual QR code, but the payment goes to the scammer's account instead.",
+    "redFlags": [
+      "A QR code sticker that looks slightly misaligned, newer, or different from the merchant's usual signage",
+      "The payee name shown after scanning doesn't match the shop name",
+      "Any QR code in a location where tampering would be easy (unattended stalls, unmonitored counters)"
+    ],
+    "whatToDo": [
+      "Always check the payee name displayed after scanning, before confirming payment",
+      "If it doesn't match the business name, cancel and pay by another method",
+      "Report a suspected swapped QR code to the merchant and to cybercrime.gov.in"
+    ],
+    "source": "https://the420.in/india-digital-wallets-upi-cyber-fraud-security-2026/",
+    "order": 5
+  },
+  {
+    "key": "prepaid_task_scam",
+    "title": "Prepaid Task Scam",
+    "severity": "medium",
+    "vector": "WhatsApp / Telegram / social media DM",
+    "howItWorks": "Victims are offered easy money for simple tasks like liking videos or rating hotels online. A few small real payouts are given first to build trust, after which victims are asked to 'invest' larger amounts for bigger returns — money that is then stolen.",
+    "redFlags": [
+      "Any 'job' offering payment for trivially easy online tasks",
+      "Requests to deposit your own money to 'unlock' bigger earnings, after a few small real payouts",
+      "Pressure to recruit friends or family into the same scheme"
+    ],
+    "whatToDo": [
+      "Treat any request to pay money to earn more money as a red flag, regardless of past small payouts",
+      "Stop engaging and don't send any further funds once asked to 'invest'",
+      "Report the scheme and any transactions made at cybercrime.gov.in"
+    ],
+    "source": "https://cyberupdates365.com/digital-arrest-scam-safety-guide-2026/",
+    "order": 6
+  },
+  {
+    "key": "boss_bec_scam",
+    "title": "Boss / Business Email Compromise Scam",
+    "severity": "medium",
+    "vector": "Email or messaging app posing as a senior executive",
+    "howItWorks": "Criminals impersonate a senior executive or company leader, usually by email or a messaging app, and pressure an employee into making an urgent wire transfer or sharing confidential company information.",
+    "redFlags": [
+      "An urgent request from 'leadership' that bypasses normal approval processes",
+      "Pressure to keep the request confidential or act before verifying",
+      "A sender address or number that's slightly different from the real executive's usual contact"
+    ],
+    "whatToDo": [
+      "Always verify unusual payment or data requests through a separate, known channel (call the person directly)",
+      "Follow standard approval processes even under time pressure",
+      "Report suspected attempts to your organization's IT/security team and to cybercrime.gov.in"
+    ],
+    "source": "https://the420.in/digital-arrest-upi-cyber-fraud-awareness/",
+    "order": 7
+  },
+  {
+    "key": "deepfake_voice_scam",
+    "title": "Deepfake Voice Cloning Scam",
+    "severity": "medium",
+    "vector": "Phone call using AI-cloned voice",
+    "howItWorks": "Scammers use AI voice-cloning tools to imitate the voice of a family member, friend, or executive, then call claiming an emergency to pressure an urgent money transfer before the target can verify what's happening.",
+    "redFlags": [
+      "An urgent, emotionally charged call asking for money transfer right away",
+      "Reluctance or excuses when asked to video call or verify identity another way",
+      "Requests to keep the situation secret from other family members or colleagues"
+    ],
+    "whatToDo": [
+      "Hang up and call the person back on their known number to verify independently",
+      "Agree on a family/team 'safe word' in advance for genuine emergencies",
+      "Report the incident at cybercrime.gov.in or call 1930"
+    ],
+    "source": "https://blogs.nahar.om/fraud-cybercrime/upi-frauds-trends-india/",
+    "order": 8
+  }
+]

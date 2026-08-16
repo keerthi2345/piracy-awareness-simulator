@@ -1,0 +1,334 @@
+.shady-page {
+  min-height: 100vh;
+  background: repeating-linear-gradient(
+      135deg,
+      var(--shady-bg) 0px,
+      var(--shady-bg) 40px,
+      var(--shady-bg2) 40px,
+      var(--shady-bg2) 80px
+    );
+  color: var(--shady-text);
+  font-family: var(--font-body);
+  padding: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.shady-topbar {
+  background: var(--shady-pink);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid var(--shady-yellow);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.shady-marquee {
+  background: var(--shady-yellow);
+  color: #1a0e2e;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.shady-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.shady-card {
+  background: rgba(0, 0, 0, 0.35);
+  border: 2px solid var(--shady-lime);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  text-align: center;
+}
+
+.shady-card img,
+.shady-card .thumb {
+  width: 100%;
+  aspect-ratio: 2/3;
+  background: linear-gradient(160deg, var(--shady-pink), var(--shady-bg2));
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+}
+
+.shady-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--shady-lime);
+  text-shadow: 2px 2px 0 var(--shady-pink);
+  margin: 20px 0 4px;
+}
+
+.watch-now-btn {
+  background: var(--shady-lime);
+  color: #170b26;
+  font-family: var(--font-display);
+  font-weight: 700;
+  border: none;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-size: 1.1rem;
+  box-shadow: 0 0 0 3px var(--shady-pink);
+  animation: pulse-btn 1.4s infinite;
+}
+
+@keyframes pulse-btn {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+.safety-note {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(10, 13, 10, 0.9);
+  color: var(--terminal-green);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  max-width: 220px;
+  border: 1px solid var(--terminal-green-dim);
+  z-index: 50;
+}
+
+/* ---- fake popup ---- */
+.fake-popup-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.fake-popup {
+  background: linear-gradient(160deg, #fff, #ffe9f0);
+  color: #170b26;
+  width: min(360px, 90vw);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  text-align: center;
+  border: 4px solid var(--shady-pink);
+  box-shadow: 0 0 40px var(--shady-pink);
+}
+
+.fake-popup h2 {
+  font-family: var(--font-display);
+  color: var(--shady-pink);
+  margin-top: 0;
+}
+
+.fake-popup-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.fake-popup-btn {
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 18px;
+  font-weight: 600;
+}
+
+.fake-popup-btn.primary {
+  background: var(--shady-lime);
+}
+
+.fake-popup-btn.close {
+  background: #eee;
+  color: #333;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0;
+  font-weight: 700;
+}
+
+/* ---- fake browser chrome for notification/captcha prompts ---- */
+.fake-browser-bar {
+  background: #e8e8e8;
+  color: #333;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  max-width: 420px;
+  margin: 16px auto;
+}
+
+.fake-browser-bar .fav {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  background: var(--shady-pink);
+  flex-shrink: 0;
+}
+
+.fake-browser-bar .actions {
+  margin-left: auto;
+  display: flex;
+  gap: 6px;
+}
+
+.fake-browser-bar button {
+  border: 1px solid #bbb;
+  background: #fff;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+}
+
+.fake-browser-bar button.allow {
+  background: #1a73e8;
+  color: #fff;
+  border-color: #1a73e8;
+}
+
+/* ---- tab multiply animation ---- */
+.tab-multiply-row {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+
+.tab-icon {
+  width: 34px;
+  height: 24px;
+  background: #444;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid #666;
+  border-bottom: none;
+}
+
+/* ---- fake apk install screen ---- */
+.apk-card {
+  background: rgba(0,0,0,0.4);
+  border: 2px solid var(--shady-yellow);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  max-width: 420px;
+  margin: 24px auto;
+  text-align: center;
+}
+
+.apk-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background: linear-gradient(160deg, #e50914, #170b26);
+  margin: 0 auto 12px;
+}
+
+.progress-track {
+  background: #333;
+  border-radius: 20px;
+  height: 14px;
+  overflow: hidden;
+  margin-top: 16px;
+}
+
+.progress-fill {
+  background: var(--shady-lime);
+  height: 100%;
+  border-radius: 20px;
+}
+
+.fake-permission-list {
+  text-align: left;
+  background: #fff;
+  color: #14171a;
+  border-radius: var(--radius-md);
+  padding: 18px;
+  max-width: 380px;
+  margin: 16px auto;
+  font-size: 0.9rem;
+}
+
+.fake-permission-list li {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fake-permission-list .danger {
+  color: var(--shady-pink);
+  font-weight: 600;
+}
+
+/* ---- mobile responsiveness ---- */
+@media (max-width: 480px) {
+  .shady-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+
+  .shady-marquee {
+    font-size: 0.68rem;
+    white-space: normal;
+  }
+
+  .shady-grid {
+    grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+    gap: 8px;
+  }
+
+  .shady-title {
+    font-size: 1.4rem;
+  }
+
+  .fake-popup {
+    padding: 18px;
+    width: min(300px, 90vw);
+  }
+
+  .apk-card {
+    padding: 16px;
+  }
+
+  .fake-permission-list {
+    padding: 14px;
+  }
+
+  .safety-note {
+    max-width: 160px;
+    font-size: 0.6rem;
+    bottom: 8px;
+    right: 8px;
+    padding: 6px 8px;
+  }
+
+  .fake-browser-bar {
+    font-size: 0.75rem;
+    padding: 8px 10px;
+    flex-wrap: wrap;
+  }
+}
